@@ -7,6 +7,15 @@ public class Producto {
 	private String descripcion;
 	
 	public double stock;
+	public double precioVenta;
+	
+	public double getPrecioVenta() {
+		return precioVenta;
+	}
+
+	public void setPrecioVenta(double precioVenta) {
+		this.precioVenta = precioVenta;
+	}
 
 	public double getStock() {
 		return stock;

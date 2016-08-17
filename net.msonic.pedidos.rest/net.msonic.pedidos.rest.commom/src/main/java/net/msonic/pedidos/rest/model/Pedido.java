@@ -1,14 +1,19 @@
 package net.msonic.pedidos.rest.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Pedido {
 	
+	public Pedido(){
+		detalle = new ArrayList<PedidoItem>();
+	}
 	private Cliente cliente;
 	private Empleado empleado;
 	private Date fechaPedido;
 	private List<PedidoItem> detalle;
+	private double descuento;
 	
 	public Cliente getCliente() {
 		return cliente;
@@ -31,10 +36,12 @@ public class Pedido {
 	public List<PedidoItem> getDetalle() {
 		return detalle;
 	}
-	public void setDetalle(List<PedidoItem> detalle) {
-		this.detalle = detalle;
+	public double getDescuento() {
+		return descuento;
 	}
-	
+	public void setDescuento(double descuento) {
+		this.descuento = descuento;
+	}
 	
 	
 
