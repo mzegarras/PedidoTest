@@ -36,7 +36,7 @@
 			
 		</dependency>
 
-		<dependency>
+		<!--dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>${mockito-all.version}</version>
@@ -57,7 +57,7 @@
 			<artifactId>mockrunner-jdbc</artifactId>
 			<version>${mockrunner-jdbc.version}</version>
 			
-		</dependency>
+		</dependency-->
 
 
 

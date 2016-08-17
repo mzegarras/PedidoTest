@@ -7,9 +7,9 @@
     <artifactId>net.msonic.pedidos.rest</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>net.msonic.pedidos.rest</groupId>
+  
   <artifactId>net.msonic.pedidos.rest.web</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  
   <packaging>war</packaging>
   <name>net.msonic.pedidos.rest.web Maven Webapp</name>
   <url>http://maven.apache.org</url>

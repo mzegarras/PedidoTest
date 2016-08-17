@@ -1,15 +1,456 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>net.msonic.pedidos.rest</groupId>
-  <artifactId>net.msonic.pedidos.rest</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>net.msonic.pedidos.rest</name>
-  <modules>
-    <module>net.msonic.pedidos.rest.commom</module>
-    <module>net.msonic.pedidos.rest.dao</module>
-    <module>net.msonic.pedidos.rest.services</module>
-    <module>net.msonic.pedidos.rest.web</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.msonic.pedidos.rest</groupId>
+	<artifactId>net.msonic.pedidos.rest</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>net.msonic.pedidos.rest</name>
+	<modules>
+		<module>net.msonic.pedidos.rest.commom</module>
+		<module>net.msonic.pedidos.rest.dao</module>
+		<module>net.msonic.pedidos.rest.services</module>
+		<module>net.msonic.pedidos.rest.web</module>
+		<module>net.msonic.pedidos.rest.test-dependencies</module>
+	</modules>
+
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.7</java.version>
+		<org.springframework.version>4.2.5.RELEASE</org.springframework.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+		<log4j.version>1.2.17</log4j.version>
+		<org.slf4j.version>1.7.21</org.slf4j.version>
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<jackson.databind.version>2.4.1</jackson.databind.version>
+		<commons-io.version>2.5</commons-io.version>
+		<activemq.version>5.13.3</activemq.version>
+		<commons-pool2.version>2.4.2</commons-pool2.version>
+		<dozer.version>5.5.1</dozer.version>
+		<hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
+
+	
+		<skip.integration.tests>true</skip.integration.tests>
+
+		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+		<sonar.host.url>http://127.0.0.1:9000</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>admin</sonar.password>
+	</properties>
+
+
+
+	<dependencies>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework.version}</version>
+
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${org.springframework.version}</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${org.springframework.version}</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework.version}</version>
+			<!--exclusions> <exclusion> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+				</exclusion> </exclusions -->
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${org.springframework.version}</version>
+
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework.version}</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-spring</artifactId>
+			<version>${activemq.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j.version}</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+
+		<!-- Logging dependencies -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>apache-log4j-extras</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-core</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+
+
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.databind.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.databind.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.databind.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>${dozer.version}</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>${commons-pool2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+
+	</dependencies>
+	<build>
+
+		<pluginManagement>
+
+
+			<plugins>
+
+				<!-- Set a JDK compiler level -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.5.1</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>5.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.7.4.201502262128</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>report</id>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>report</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- mvn dependency:copy-dependencies -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>copy</id>
+							<phase>install</phase>
+							<goals>
+								<goal>copy-dependencies</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>
+									${project.build.directory}/lib
+								</outputDirectory>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.1.1</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+						<webResources>
+							<resource>
+								<directory>${basedir}/src/main/webapp</directory>
+								<!-- Turn on filtering. If you want to filter more files you can 
+									use wildcards like **/*.xml -->
+								<filtering>true</filtering>
+								<includes>
+									<include>WEB-INF/web.xml</include>
+								</includes>
+							</resource>
+						</webResources>
+					</configuration>
+				</plugin>
+
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.19.1</version>
+					<configuration>
+						<!-- Sets the VM argument line used when unit tests are run. -->
+						<argLine>${surefireArgLine}</argLine>
+						<!-- Skips unit tests if the value of skip.unit.tests property is true -->
+						<skipTests>${skip.unit.tests}</skipTests>
+						<!-- Excludes integration tests when unit tests are run. -->
+						<excludes>
+							<exclude>**/IT*.java</exclude>
+						</excludes>
+						<runOrder>random</runOrder>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>2.19.1</version>
+					<executions>
+						<!-- Ensures that both integration-test and verify goals of the Failsafe 
+							Maven plugin are executed. -->
+						<execution>
+							<id>integration-tests</id>
+							<goals>
+								<goal>integration-test</goal>
+								<goal>verify</goal>
+							</goals>
+							<configuration>
+								<!-- Sets the VM argument line used when integration tests are run. -->
+								<argLine>${failsafeArgLine}</argLine>
+								<!-- Skips integration tests if the value of skip.integration.tests 
+									property is true -->
+								<skipTests>${skip.integration.tests}</skipTests>
+								<includes>
+									<include>**/*IT.class</include>
+								</includes>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+
+			</plugins>
+
+		</pluginManagement>
+	</build>
+
+
+
+	<profiles>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<spring.profiles.default>prod</spring.profiles.default>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<properties>
+				<spring.profiles.default>test</spring.profiles.default>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>dev</id>
+			<properties>
+				<spring.profiles.default>dev</spring.profiles.default>
+			</properties>
+		</profile>
+
+	</profiles>
+
 </project>
