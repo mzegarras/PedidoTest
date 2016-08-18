@@ -14,6 +14,7 @@
 		<module>net.msonic.pedidos.rest.test-dependencies</module>
     <module>net.msonic.pedidos.rest.demo01</module>
     <module>net.msonic.pedidos.rest.demo02</module>
+    <module>net.msonic.pedidos.rest.demo03</module>
   </modules>
 
 
