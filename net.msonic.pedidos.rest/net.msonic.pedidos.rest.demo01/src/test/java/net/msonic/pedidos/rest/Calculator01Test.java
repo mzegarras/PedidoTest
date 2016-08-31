@@ -84,4 +84,160 @@ public class Calculator01Test {
 	public static void fin(){
 		System.out.println("fin");
 	}
+	
+	
+	@Test()
+	public void testSuma(){
+		Calculator c = new Calculator();
+		c.setNumero1(2);
+		c.setNumero2(5);
+		
+		assertSame(7, c.sumar());
+		
+	}
+	
+
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN1Mayor100WhenSumaThenException(){
+		int x = 101;
+		int y = 10;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		c.sumar();
+	}
+	
+
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN2Mayor100WhenSumaThenException(){
+		int x = 10;
+		int y = 101;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		c.sumar();
+	}
+	
+	@Test()
+	public void testResta(){
+		Calculator c = new Calculator();
+		c.setNumero1(2);
+		c.setNumero2(5);
+		
+		assertSame(-3, c.restar());
+		
+	}
+	
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN1Mayor100WhenRestaThenException(){
+		int x = 101;
+		int y = 10;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		c.restar();
+	}
+	
+
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN2Mayor100WhenRestaThenException(){
+		int x = 10;
+		int y = 101;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		c.restar();
+	}
+	
+	@Test()
+	public void testProducto(){
+		Calculator c = new Calculator();
+		c.setNumero1(2);
+		c.setNumero2(5);
+		
+		assertSame(10, c.producto());
+		
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN1Mayor100WhenProductoThenException(){
+		int x = 101;
+		int y = 101;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		assertSame(2, c.producto());
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN2Mayor100WhenProductoThenException(){
+		int x = 10;
+		int y = 101;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		assertSame(2, c.producto());
+	}
+	
+	
+	@Test()
+	public void testDivision(){
+		Calculator c = new Calculator();
+		c.setNumero1(4);
+		c.setNumero2(2);
+		
+		assertSame(2, c.division());
+		
+	}
+	
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN1Mayor100WhenDivisionThenException(){
+		int x = 101;
+		int y = 101;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		assertSame(2, c.division());
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void givenN2Mayor100WhenDivisionThenException(){
+		int x = 10;
+		int y = 101;
+		Calculator c = new Calculator();
+		c.setNumero1(x);
+		c.setNumero2(y);
+		
+		assertSame(2, c.division());
+	}
+	
+	
+	
+	@Test()
+	public void givenN1ThenGetX1ThenN1(){
+		Calculator c = new Calculator();
+		c.setNumero1(2);
+		
+		assertSame(2, c.getNumero1());
+		
+	}
+	
+	@Test()
+	public void givenN2ThenGetX2ThenN2(){
+		Calculator c = new Calculator();
+		c.setNumero2(2);
+		
+		assertSame(2, c.getNumero2());
+		
+	}
+	
 }
